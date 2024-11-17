@@ -28,10 +28,11 @@ jobs:
               docker build . --tag ghcr.io/fashionnew/firecrawl:latest 
               docker save -o firecrawl.tar ghcr.io/fashionnew/firecrawl:latest 
 
-          - name: Upload to Google Drive
-            id: upload
-            uses: iterative/google-drive-upload-action@v1
+          - name: Upload to gdrive
+            uses: adityak74/google-drive-upload-git-action@main
             with:
-              parent_folder_id: ${{ secrets.PARENT_FOLDER_ID }}
-              files: 'firecrawl.tar'
               credentials_json: ${{ secrets.GOOGLE_DRIVE_CREDENTIALS }}
+              filename: "firecrawl.tar"
+              folderId: ${{ secrets.PARENT_FOLDER_ID }}
+              name: "firecrawl.tar" # optional string
+              overwrite: "true" # optional boolean
