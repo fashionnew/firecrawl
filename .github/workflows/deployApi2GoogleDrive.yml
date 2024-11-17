@@ -31,9 +31,11 @@ jobs:
             run: |
               docker save -o firecrawl.tar.gz ghcr.io/fashionnew/firecrawl:latest 
 
-          - name: Upload README.md to Google Drive
-            uses: Jodebu/upload-to-drive@master
+          - name: Upload to gdrive
+            uses: mathisve/gdrive-upload-action@main
             with:
-              target: firecrawl.tar.gz
+              filename: firecrawl.tar.gz
+              name: firecrawl.tar.gz
+              folderId: ${{ secrets.PARENT_FOLDER_ID }}
               credentials: ${{ secrets.GOOGLE_DRIVE_CREDENTIALS }}
-              folder: ${{ secrets.PARENT_FOLDER_ID }}
+              encoded: false
