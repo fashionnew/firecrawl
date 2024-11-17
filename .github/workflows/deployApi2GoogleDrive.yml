@@ -35,5 +35,5 @@ jobs:
             uses: adityak74/google-drive-upload-git-action@main
             with:
               credentials: ${{ secrets.GOOGLE_DRIVE_CREDENTIALS }}
-              filename: "archive.zip"
+              filename: "firecrawl.tar.gz"
               folderId: ${{ secrets.PARENT_FOLDER_ID }}
