@@ -29,11 +29,11 @@ jobs:
 
           - name: 'Save Image'
             run: |
-              docker save -o firecrawl.tar.gz ghcr.io/fashionnew/firecrawl:latest 
+              docker save -o /tmp/firecrawl.tar.gz ghcr.io/fashionnew/firecrawl:latest 
 
           - name: Upload to gdrive
             uses: adityak74/google-drive-upload-git-action@main
             with:
               credentials: ${{ secrets.GOOGLE_DRIVE_CREDENTIALS }}
-              filename: "firecrawl.tar.gz"
+              filename: /tmp/firecrawl.tar.gz
               folderId: ${{ secrets.PARENT_FOLDER_ID }}
