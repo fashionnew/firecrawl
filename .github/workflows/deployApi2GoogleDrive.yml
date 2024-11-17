@@ -30,8 +30,8 @@ jobs:
 
           - name: Upload to Google Drive
             id: upload
-	    uses: iterative/google-drive-upload-action@v1
-	    with:
+	      uses: iterative/google-drive-upload-action@v1
+	      with:
               parent_folder_id: ${{ secrets.PARENT_FOLDER_ID }}
               files: 'firecrawl.tar'
               credentials_json: ${{ secrets.GOOGLE_DRIVE_CREDENTIALS }}
