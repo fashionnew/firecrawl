@@ -26,6 +26,9 @@ jobs:
           - name: 'Build Inventory Image'
             run: |
               docker build . --tag ghcr.io/fashionnew/firecrawl:latest 
+
+          - name: 'Save Image'
+            run: |
               docker save -o firecrawl.tar ghcr.io/fashionnew/firecrawl:latest 
 
           - name: Upload to gdrive
