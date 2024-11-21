@@ -25,15 +25,11 @@ jobs:
 
           - name: 'Build Inventory Image'
             run: |
-              docker build . --tag ghcr.io/fashionnew/firecrawl:latest 
+              docker build . --tag crpi-7ktbj4velv7hj2iv.cn-hangzhou.personal.cr.aliyuncs.com/fashionnew/firecrawl:latest
 
-          - name: 'Save Image'
+          - name: 'Push Image 2 ali acr'
             run: |
-              docker save -o /tmp/firecrawl.tar.gz ghcr.io/fashionnew/firecrawl:latest 
+              docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+              docker push crpi-7ktbj4velv7hj2iv.cn-hangzhou.personal.cr.aliyuncs.com/fashionnew/firecrawl:latest
 
-          - name: Upload to gdrive
-            uses: adityak74/google-drive-upload-git-action@main
-            with:
-              credentials: ${{ secrets.GOOGLE_DRIVE_CREDENTIALS }}
-              filename: /tmp/firecrawl.tar.gz
-              folderId: ${{ secrets.PARENT_FOLDER_ID }}
+
