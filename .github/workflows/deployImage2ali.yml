@@ -31,7 +31,7 @@ jobs:
               cat ~/.docker/config.json
           - name: 'set ps'
             run: |
-              echo '{"auths": {"crpi-7ktbj4velv7hj2iv.cn-hangzhou.personal.cr.aliyuncs.com": {"auth": "'$AUTH_STRING'"}}}' > ~/.docker/config.json
+              echo '{"auths": {"crpi-7ktbj4velv7hj2iv.cn-hangzhou.personal.cr.aliyuncs.com": {"auth": "'${{DOCKER_USERNAME_PS_BASE64}}'"}}}' > ~/.docker/config.json
           - name: 'Push Image 2 ali acr'
             run: |
               docker push crpi-7ktbj4velv7hj2iv.cn-hangzhou.personal.cr.aliyuncs.com/fashionnew/firecrawl:latest
