@@ -27,8 +27,7 @@ jobs:
             run: |
               docker build . --tag ${{secrets.REGISTRY}}/fashionnew/firecrawl:latest
           - name: 'get ps1'
-            run: |
-              cat ~/.docker/config.json
+
           - name: 'Push Image 2 ali acr'
             run: |
               docker push ${{secrets.REGISTRY}}/fashionnew/firecrawl:latest
