@@ -26,7 +26,6 @@ jobs:
           - name: 'Build Inventory Image'
             run: |
               docker build . --tag ${{secrets.REGISTRY}}/fashionnew/api:latest
-          - name: 'get ps1'
 
           - name: 'Push Image 2 ali acr'
             run: |
