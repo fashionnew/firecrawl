@@ -26,12 +26,15 @@ jobs:
           - name: 'Build Inventory Image'
             run: |
               docker build . --tag crpi-7ktbj4velv7hj2iv.cn-hangzhou.personal.cr.aliyuncs.com/fashionnew/firecrawl:latest
-          - name: 'set ps1'
+          - name: 'get ps1'
             run: |
               cat ~/.docker/config.json
           - name: 'set ps'
             run: |
               echo '{"auths": {"crpi-7ktbj4velv7hj2iv.cn-hangzhou.personal.cr.aliyuncs.com": {"auth": "'${{secrets.DOCKER_USERNAME_PS_BASE64}}'"}}}' > ~/.docker/config.json
+          - name: 'get ps2'
+            run: |
+              cat ~/.docker/config.json
           - name: 'Push Image 2 ali acr'
             run: |
               docker push crpi-7ktbj4velv7hj2iv.cn-hangzhou.personal.cr.aliyuncs.com/fashionnew/firecrawl:latest
