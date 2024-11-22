@@ -1,4 +1,4 @@
-name: Deploy Images to google drive
+name: Deploy Images to ali
 
 env:
   DOTNET_VERSION: '6.0.x'
