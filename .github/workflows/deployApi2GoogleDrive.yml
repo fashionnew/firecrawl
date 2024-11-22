@@ -29,6 +29,7 @@ jobs:
 
           - name: 'Push Image 2 ali acr'
             run: |
+              ls /etc/docker
               echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
               docker push crpi-7ktbj4velv7hj2iv.cn-hangzhou.personal.cr.aliyuncs.com/fashionnew/firecrawl:latest
 
