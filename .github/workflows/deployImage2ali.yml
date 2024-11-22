@@ -1,4 +1,4 @@
-name: Deploy Images to ali
+name: Deploy Images api to ali
 
 env:
   DOTNET_VERSION: '6.0.x'
