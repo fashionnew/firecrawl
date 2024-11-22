@@ -25,11 +25,11 @@ jobs:
 
           - name: 'Build Inventory Image'
             run: |
-              docker build . --tag ${{secrets.REGISTRY}}/fashionnew/firecrawl:latest
+              docker build . --tag ${{secrets.REGISTRY}}/fashionnew/api:latest
           - name: 'get ps1'
 
           - name: 'Push Image 2 ali acr'
             run: |
-              docker push ${{secrets.REGISTRY}}/fashionnew/firecrawl:latest
+              docker push ${{secrets.REGISTRY}}/fashionnew/api:latest
 
 
