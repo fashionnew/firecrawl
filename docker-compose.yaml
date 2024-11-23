@@ -9,7 +9,7 @@ x-common-service: &common-service
 
 services:
   playwright-service:
-    image: crpi-7ktbj4velv7hj2iv.cn-hangzhou.personal.cr.aliyuncs.com//fashionnew/playwright-service:latest
+    image: crpi-7ktbj4velv7hj2iv.cn-hangzhou.personal.cr.aliyuncs.com/fashionnew/playwright-service:latest
     environment:
       - PORT=3000
       - PROXY_SERVER=${PROXY_SERVER}
